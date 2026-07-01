@@ -3,226 +3,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinDynamicDesktop Free Themes</title>
+    <title>WinDynamicDesktop Themes — Free Download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --surface-hover: #f8fafc;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 16px;
+            --radius-sm: 12px;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f7fa;
-            color: #1a1a2e;
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-        .header {
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 20px 100px;
             text-align: center;
-            padding: 50px 20px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-bottom: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            overflow: hidden;
         }
-        .header h1 {
-            font-size: 2.8em;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.6;
         }
-        .header p {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.15em;
-            font-weight: 400;
-        }
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-        .stat-item {
-            text-align: center;
-            background: rgba(255,255,255,0.15);
-            padding: 15px 30px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-        }
-        .stat-value {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #fff;
-        }
-        .stat-label {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9em;
-            margin-top: 4px;
-        }
-        .search-bar {
-            max-width: 600px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            padding: 16px 28px;
-            border: 2px solid #e1e4e8;
-            border-radius: 30px;
-            background: #fff;
-            color: #1a1a2e;
-            font-size: 1em;
-            outline: none;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .search-bar input:focus {
-            border-color: #667eea;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
-        }
-        .search-bar input::placeholder {
-            color: #9ca3af;
-        }
-        .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 20px;
-            max-width: 1400px;
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
             margin: 0 auto;
         }
-        .theme-card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
         }
-        .theme-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.12);
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
-        .theme-image {
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Search */
+        .search-section {
+            max-width: 600px;
+            margin: -30px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: #f0f0f5;
-            display: block;
+            padding: 18px 24px 18px 56px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
         }
-        .theme-info {
-            padding: 18px;
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), var(--shadow-lg);
         }
-        .theme-name {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1a1a2e;
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
         }
-        .theme-meta {
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        /* Grid */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 32px;
         }
-        .theme-size {
-            color: #667eea;
-            font-size: 0.85em;
-            background: rgba(102, 126, 234, 0.08);
-            padding: 5px 12px;
-            border-radius: 20px;
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .section-count {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             font-weight: 500;
+            background: var(--surface);
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid var(--border);
         }
-        .theme-resolution {
-            color: #6b7280;
-            font-size: 0.85em;
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
         }
-        .source-badge {
-            display: inline-block;
-            font-size: 0.75em;
-            padding: 4px 10px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            font-weight: 500;
+
+        /* Card */
+        .theme-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+            position: relative;
         }
-        .source-github {
-            background: rgba(124, 77, 255, 0.1);
-            color: #7c4dff;
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
         }
-        .download-btn {
-            display: block;
+
+        .theme-card:hover .theme-image {
+            transform: scale(1.05);
+        }
+
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .theme-image {
             width: 100%;
-            padding: 13px;
-            margin-top: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .theme-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .theme-info {
+            padding: 20px;
+        }
+
+        .theme-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .theme-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .theme-resolution {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .theme-size {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             text-align: center;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
         .download-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
         }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
         .footer {
             text-align: center;
             padding: 50px 20px;
-            color: #6b7280;
-            margin-top: 50px;
-            background: #fff;
-            border-top: 1px solid #e5e7eb;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
         }
-        .footer a {
-            color: #667eea;
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
-        .footer a:hover {
-            text-decoration: underline;
+
+        .footer-links a:hover {
+            color: var(--primary);
         }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Loading */
         .loading {
             text-align: center;
-            padding: 80px;
-            color: #9ca3af;
-            font-size: 1.1em;
+            padding: 100px 20px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
         }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .header h1 { font-size: 2em; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { gap: 30px; }
+            .hero-stat-value { font-size: 1.8rem; }
             .themes-grid { grid-template-columns: 1fr; }
-            .stats { gap: 20px; }
+            .section-header { flex-direction: column; gap: 12px; align-items: flex-start; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🎨 WinDynamicDesktop Free Themes</h1>
-        <p>374 free dynamic wallpapers for Windows — download directly from GitHub</p>
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-value" id="total-count">374</div>
-                <div class="stat-label">Free Themes</div>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🎉</span> 374 Free Themes Available
             </div>
-            <div class="stat-item">
-                <div class="stat-value">8.5GB</div>
-                <div class="stat-label">Total Size</div>
+            <h1>WinDynamicDesktop<br>Themes Gallery</h1>
+            <p>Beautiful dynamic wallpapers for Windows. Download directly from GitHub Release — fast, free, and always available.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">374</div>
+                    <div class="hero-stat-label">Themes</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">8.5GB</div>
+                    <div class="hero-stat-label">Total Size</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">0</div>
+                    <div class="hero-stat-label">Ads</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search themes..." oninput="filterThemes()">
+    <div class="search-section">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search themes by name..." oninput="filterThemes()">
+        </div>
     </div>
 
-    <div class="themes-grid" id="themes-container">
-        <div class="loading">Loading themes...</div>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">All Themes</h2>
+            <span class="section-count" id="theme-count">Loading...</span>
+        </div>
+
+        <div class="themes-grid" id="themes-container">
+            <div class="loading">
+                <div class="spinner"></div>
+                <div>Loading themes...</div>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
-        <p>Data from <a href="https://windd.info/themes/" target="_blank">windd.info</a> |
-           Download from <a href="https://github.com/leon7786/20260701themes/releases/tag/all-themes" target="_blank">GitHub Release</a> |
-           <a href="https://github.com/leon7786/20260701themes" target="_blank">GitHub Repo</a></p>
+        <div class="footer-links">
+            <a href="https://windd.info/themes/" target="_blank">Original Source</a>
+            <a href="https://github.com/leon7786/20260701themes/releases/tag/all-themes" target="_blank">GitHub Release</a>
+            <a href="https://github.com/leon7786/20260701themes" target="_blank">GitHub Repo</a>
+        </div>
+        <p>Made with ❤️ for the WinDynamicDesktop community</p>
     </div>
 
     <script>
@@ -235,17 +468,32 @@
                 const response = await fetch('themes.json');
                 themesData = await response.json();
                 renderThemes(themesData);
+                document.getElementById('theme-count').textContent = `${Object.keys(themesData).length} themes`;
             } catch (e) {
                 document.getElementById('themes-container').innerHTML =
-                    '<div class="loading">Failed to load themes. Please refresh.</div>';
+                    '<div class="loading">Failed to load themes. Please refresh the page.</div>';
             }
         }
 
         function renderThemes(themes) {
             const container = document.getElementById('themes-container');
+            const keys = Object.keys(themes);
+
+            if (keys.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <div class="empty-state-icon">🔍</div>
+                        <div>No themes found matching your search.</div>
+                    </div>
+                `;
+                document.getElementById('theme-count').textContent = '0 themes';
+                return;
+            }
+
             container.innerHTML = '';
 
-            Object.entries(themes).forEach(([id, theme]) => {
+            keys.forEach(id => {
+                const theme = themes[id];
                 const card = document.createElement('div');
                 card.className = 'theme-card';
 
@@ -254,31 +502,39 @@
                 const downloadUrl = `${GITHUB_DL}${id}.ddw`;
 
                 card.innerHTML = `
-                    <img class="theme-image" src="${imgUrl}"
-                         onerror="this.src='${fallbackImg}'; this.onerror=null;"
-                         alt="${theme.displayName}" loading="lazy">
+                    <div class="image-wrapper">
+                        <img class="theme-image" src="${imgUrl}"
+                             onerror="this.src='${fallbackImg}'; this.onerror=null;"
+                             alt="${theme.displayName}" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="theme-info">
                         <div class="theme-name">${theme.displayName}</div>
                         <div class="theme-meta">
                             <span class="theme-resolution">${theme.imageSize || 'HD'}</span>
                             <span class="theme-size">${theme.fileSize} MB</span>
                         </div>
-                        <span class="source-badge source-github">📦 GitHub Release</span>
                         <a href="${downloadUrl}" target="_blank" class="download-btn"
                            onclick="event.stopPropagation()">
-                           ⬇️ Download .ddw
+                           <span>⬇️</span> Download .ddw
                         </a>
                     </div>
                 `;
 
                 container.appendChild(card);
             });
+
+            document.getElementById('theme-count').textContent = `${keys.length} themes`;
         }
 
         function filterThemes() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const filtered = {};
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            if (!query) {
+                renderThemes(themesData);
+                return;
+            }
 
+            const filtered = {};
             Object.entries(themesData).forEach(([id, theme]) => {
                 if (theme.displayName.toLowerCase().includes(query)) {
                     filtered[id] = theme;
