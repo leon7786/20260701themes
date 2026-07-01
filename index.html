@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinDynamicDesktop Free Themes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f23;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: 1px solid #2a2a4a;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header p {
+            color: #8892b0;
+            font-size: 1.1em;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #64ffda;
+        }
+        .stat-label {
+            color: #8892b0;
+            font-size: 0.9em;
+        }
+        .search-bar {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 15px 25px;
+            border: 1px solid #2a2a4a;
+            border-radius: 30px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .search-bar input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        }
+        .search-bar input::placeholder {
+            color: #556677;
+        }
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .theme-card {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #2a2a4a;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+        .theme-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #0f0f23;
+        }
+        .theme-info {
+            padding: 15px;
+        }
+        .theme-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #e0e0e0;
+        }
+        .theme-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .theme-size {
+            color: #64ffda;
+            font-size: 0.85em;
+            background: rgba(100, 255, 218, 0.1);
+            padding: 4px 10px;
+            border-radius: 15px;
+        }
+        .theme-resolution {
+            color: #8892b0;
+            font-size: 0.85em;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #556677;
+            border-top: 1px solid #2a2a4a;
+            margin-top: 40px;
+        }
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: #556677;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .themes-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 WinDynamicDesktop Free Themes</h1>
+        <p>423 free dynamic wallpapers for Windows</p>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="total-count">423</div>
+                <div class="stat-label">Free Themes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">9GB+</div>
+                <div class="stat-label">Total Size</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search themes..." oninput="filterThemes()">
+    </div>
+
+    <div class="themes-grid" id="themes-container">
+        <div class="loading">Loading themes...</div>
+    </div>
+
+    <div class="footer">
+        <p>Data from <a href="https://windd.info/themes/" style="color: #667eea;">windd.info</a> | 
+           Themes by various authors | 
+           <a href="https://github.com/leon7786/20260701themes" style="color: #667eea;">GitHub</a></p>
+    </div>
+
+    <script>
+        let themesData = {};
+        const BASE_IMG = 'https://cdn.jsdelivr.net/gh/t1m0thyj/WDD-website@gh-pages/themes/images/thumbnails/';
+
+        async function loadThemes() {
+            try {
+                const response = await fetch('themes.json');
+                themesData = await response.json();
+                renderThemes(themesData);
+            } catch (e) {
+                document.getElementById('themes-container').innerHTML = 
+                    '<div class="loading">Failed to load themes. Please refresh.</div>';
+            }
+        }
+
+        function renderThemes(themes) {
+            const container = document.getElementById('themes-container');
+            container.innerHTML = '';
+
+            Object.entries(themes).forEach(([id, theme]) => {
+                const card = document.createElement('div');
+                card.className = 'theme-card';
+                
+                const imgUrl = `${BASE_IMG}${id}_day.png`;
+                const fallbackImg = `${BASE_IMG}${id}_night.png`;
+                
+                // GitHub Release download URL (to be updated after upload)
+                const downloadUrl = `https://github.com/leon7786/20260701themes/releases/download/themes/${id}.ddw`;
+                
+                card.innerHTML = `
+                    <img class="theme-image" src="${imgUrl}" 
+                         onerror="this.src='${fallbackImg}'; this.onerror=null;"
+                         alt="${theme.displayName}" loading="lazy">
+                    <div class="theme-info">
+                        <div class="theme-name">${theme.displayName}</div>
+                        <div class="theme-meta">
+                            <span class="theme-resolution">${theme.imageSize || 'HD'}</span>
+                            <span class="theme-size">${theme.fileSize} MB</span>
+                        </div>
+                        <a href="${theme.themeUrl}" target="_blank" class="download-btn" 
+                           onclick="event.stopPropagation()">
+                           📥 Download
+                        </a>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        function filterThemes() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = {};
+            
+            Object.entries(themesData).forEach(([id, theme]) => {
+                if (theme.displayName.toLowerCase().includes(query)) {
+                    filtered[id] = theme;
+                }
+            });
+            
+            renderThemes(filtered);
+        }
+
+        loadThemes();
+    </script>
+</body>
+</html>
