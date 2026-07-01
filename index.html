@@ -454,6 +454,22 @@
         .site-footer p {
             color: var(--text-3);
             font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .visitor-count {
+            margin-top: 16px;
+        }
+
+        .visitor-count img {
+            display: inline-block;
+            border-radius: 6px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .visitor-count img:hover {
+            opacity: 1;
         }
 
         /* Loading & Empty */
@@ -568,6 +584,11 @@
             <a href="https://github.com/leon7786/20260701themes" target="_blank">GitHub Repo</a>
         </div>
         <p>Made with care for the WinDynamicDesktop community</p>
+        <div class="visitor-count">
+            <img src="https://visitor-badge.laobi.icu/badge?page_id=leon7786.20260701themes&left_color=%23f0f4f8&right_color=%236366f1&left_text=Visitors" 
+                 alt="visitor count" 
+                 loading="lazy">
+        </div>
     </footer>
 
     <script>
