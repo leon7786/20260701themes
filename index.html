@@ -98,6 +98,81 @@
             margin-top: 40px;
         }
 
+        /* App Download Section */
+        .app-download {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-download-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .app-download-title .version {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .app-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .app-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .app-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: #f8f9ff;
+        }
+
+        .app-btn .label {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        .app-btn-recommended {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: #1a1a2e;
+        }
+
+        .app-btn-recommended:hover {
+            background: linear-gradient(135deg, #ffe033 0%, #ffc033 100%);
+        }
+
         .hero-stat {
             text-align: center;
         }
@@ -423,6 +498,49 @@
                 <div class="hero-stat">
                     <div class="hero-stat-value">0</div>
                     <div class="hero-stat-label">Ads</div>
+                </div>
+            </div>
+
+            <!-- WinDynamicDesktop App Download -->
+            <div class="app-download">
+                <div class="app-download-title">
+                    <span>💻</span>
+                    Get WinDynamicDesktop
+                    <span class="version">v5.7.0</span>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_x64_Setup.exe"
+                       class="app-btn app-btn-recommended" download>
+                        <span>⭐</span>
+                        <div>
+                            x64 Setup.exe
+                            <div class="label">Recommended for most PCs</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_x64_Portable.exe"
+                       class="app-btn" download>
+                        <span>📦</span>
+                        <div>
+                            x64 Portable
+                            <div class="label">No install needed</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_arm64_Setup.exe"
+                       class="app-btn" download>
+                        <span>🔷</span>
+                        <div>
+                            arm64 Setup
+                            <div class="label">ARM devices</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_x86_Setup.exe"
+                       class="app-btn" download>
+                        <span>💾</span>
+                        <div>
+                            x86 Setup
+                            <div class="label">32-bit legacy</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
