@@ -514,8 +514,8 @@
                             <span class="theme-resolution">${theme.imageSize || 'HD'}</span>
                             <span class="theme-size">${theme.fileSize} MB</span>
                         </div>
-                        <a href="${downloadUrl}" target="_blank" class="download-btn"
-                           onclick="event.stopPropagation()">
+                        <a href="${downloadUrl}" class="download-btn"
+                           download="${theme.displayName}.ddw">
                            <span>⬇️</span> Download .ddw
                         </a>
                     </div>
