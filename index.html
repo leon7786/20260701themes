@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinDynamicDesktop Themes</title>
+    <title>WinDynamicDesktop Themes — Free Download</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f8fafc;
+            --bg: #f0f4f8;
             --surface: #ffffff;
-            --surface-2: #f1f5f9;
+            --surface-hover: #f8fafc;
             --text: #0f172a;
             --text-2: #475569;
             --text-3: #94a3b8;
             --border: #e2e8f0;
             --accent: #6366f1;
             --accent-light: #818cf8;
-            --accent-bg: rgba(99, 102, 241, 0.08);
-            --radius: 20px;
-            --radius-sm: 14px;
-            --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.03);
-            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
-            --shadow-xl: 0 25px 60px rgba(0,0,0,0.12), 0 10px 25px rgba(0,0,0,0.06);
+            --accent-dark: #4f46e5;
+            --radius: 24px;
+            --radius-sm: 16px;
+            --radius-xs: 12px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,83 +33,79 @@
             color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header */
-        .site-header {
-            background: linear-gradient(160deg, #1e1b4b 0%, #312e81 30%, #4c1d95 60%, #701a75 100%);
-            padding: 60px 20px 0;
+        /* ===== Hero ===== */
+        .hero {
             position: relative;
+            padding: 100px 20px 120px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #f093fb 80%, #f5576c 100%);
             overflow: hidden;
         }
 
-        .site-header::after {
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 100px;
+            height: 120px;
             background: linear-gradient(to bottom, transparent, var(--bg));
             pointer-events: none;
         }
 
-        .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
+        .hero-inner {
             position: relative;
             z-index: 1;
-            text-align: center;
-            padding-bottom: 80px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .brand {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .brand-icon {
-            width: 40px; height: 40px;
-            background: linear-gradient(135deg, #a78bfa, #c084fc);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
-        }
-
-        .brand-text {
-            color: rgba(255,255,255,0.5);
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            margin-bottom: 28px;
         }
 
-        .site-title {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
             color: white;
+            line-height: 1.05;
+            margin-bottom: 16px;
             letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 12px;
         }
 
-        .site-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.55);
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
             font-weight: 400;
-            max-width: 480px;
-            margin: 0 auto 32px;
         }
 
+        /* Stats */
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 48px;
-            margin-bottom: 40px;
+            gap: 64px;
+            margin-bottom: 48px;
         }
 
         .hstat {
@@ -120,7 +113,7 @@
         }
 
         .hstat-num {
-            font-size: 1.8rem;
+            font-size: 2.6rem;
             font-weight: 800;
             color: white;
             line-height: 1;
@@ -128,221 +121,191 @@
 
         .hstat-label {
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-top: 6px;
-            font-weight: 600;
         }
 
-        /* App download pill */
+        /* App buttons */
         .app-pill {
             display: inline-flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.08);
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
             border-radius: 100px;
-            padding: 8px;
+            padding: 10px;
         }
 
-        .app-pill-btn {
+        .app-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 10px 22px;
-            background: rgba(255,255,255,0.06);
-            color: rgba(255,255,255,0.8);
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
             border-radius: 100px;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.12);
             position: relative;
             overflow: hidden;
-            /* 立体感 */
-            box-shadow:
-                0 3px 8px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1),
-                inset 0 -1px 0 rgba(0,0,0,0.1);
-            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
         }
 
-        .app-pill-btn::before {
+        .app-btn::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 45%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+            top: 0; left: 0; right: 0; height: 50%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.06), transparent);
             border-radius: 100px 100px 0 0;
             pointer-events: none;
         }
 
-        .app-pill-btn:hover {
-            background: rgba(255,255,255,0.15);
+        .app-btn:hover {
+            background: rgba(255,255,255,0.18);
             color: white;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow:
-                0 8px 20px rgba(0,0,0,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.15),
-                inset 0 -1px 0 rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
         }
 
-        .app-pill-btn:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow:
-                0 1px 4px rgba(0,0,0,0.1),
-                inset 0 2px 4px rgba(0,0,0,0.15),
-                inset 0 -1px 0 rgba(255,255,255,0.05);
-        }
+        .app-btn:active { transform: translateY(0) scale(0.97); }
 
-        .app-pill-btn.primary {
-            background: linear-gradient(145deg, #fef08a 0%, #fde047 40%, #fbbf24 100%);
+        .app-btn.primary {
+            background: linear-gradient(145deg, #fef08a, #fde047, #fbbf24);
             color: #1e1b4b;
             border: none;
-            box-shadow:
-                0 4px 10px rgba(251, 191, 36, 0.3),
-                inset 0 1px 0 rgba(255,255,255,0.4),
-                inset 0 -2px 0 rgba(0,0,0,0.08);
-            text-shadow: none;
+            box-shadow: 0 4px 15px rgba(251,191,36,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
         }
 
-        .app-pill-btn.primary::before {
-            background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+        .app-btn.primary::before {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
         }
 
-        .app-pill-btn.primary:hover {
-            background: linear-gradient(145deg, #fef9c3 0%, #fde68a 40%, #fbbf24 100%);
-            color: #0f0a1a;
-            transform: translateY(-3px) scale(1.03);
-            box-shadow:
-                0 10px 25px rgba(251, 191, 36, 0.4),
-                inset 0 1px 0 rgba(255,255,255,0.5),
-                inset 0 -2px 0 rgba(0,0,0,0.05);
+        .app-btn.primary:hover {
+            background: linear-gradient(145deg, #fef9c3, #fde68a, #fbbf24);
+            box-shadow: 0 8px 25px rgba(251,191,36,0.5);
         }
 
-        .app-pill-btn.primary:active {
-            transform: translateY(1px) scale(0.98);
-            box-shadow:
-                0 2px 6px rgba(251, 191, 36, 0.2),
-                inset 0 2px 4px rgba(0,0,0,0.1),
-                inset 0 -1px 0 rgba(255,255,255,0.1);
-        }
-
-        .app-pill-btn .tag {
-            font-size: 0.68rem;
-            opacity: 0.7;
+        .app-btn .version {
+            font-size: 0.7rem;
+            opacity: 0.65;
             margin-left: 2px;
-            font-weight: 500;
         }
 
-        /* Search */
+        /* ===== Search ===== */
         .search-wrap {
-            max-width: 560px;
-            margin: -28px auto 48px;
+            max-width: 600px;
+            margin: -32px auto 60px;
             padding: 0 20px;
             position: relative;
             z-index: 2;
         }
 
-        .search-input {
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
             width: 100%;
-            padding: 16px 24px 16px 52px;
-            border: 1px solid var(--border);
+            padding: 20px 28px 20px 56px;
+            border: 2px solid var(--border);
             border-radius: var(--radius);
             background: var(--surface);
             color: var(--text);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-family: inherit;
             outline: none;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.03);
             transition: all 0.3s ease;
         }
 
-        .search-input:focus {
+        .search-box input:focus {
             border-color: var(--accent-light);
-            box-shadow: 0 0 0 4px var(--accent-bg), var(--shadow-lg);
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.08), 0 8px 30px rgba(0,0,0,0.08);
         }
 
-        .search-input::placeholder {
-            color: var(--text-3);
-        }
+        .search-box input::placeholder { color: var(--text-3); }
 
-        .search-wrap .icon {
+        .search-icon {
             position: absolute;
-            left: 40px;
+            left: 22px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-3);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             pointer-events: none;
         }
 
-        /* Content */
+        /* ===== Content ===== */
         .content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px 60px;
+            padding: 0 24px 80px;
         }
 
         .section-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--text);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
         }
 
         .count-badge {
             font-size: 0.8rem;
             color: var(--text-3);
-            font-weight: 500;
-            background: var(--surface-2);
-            padding: 6px 14px;
+            font-weight: 600;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
             border-radius: 100px;
         }
 
-        /* Grid */
+        /* ===== Grid ===== */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
 
-        /* Card */
+        /* ===== Card ===== */
         .card {
             background: var(--surface);
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
             position: relative;
         }
 
         .card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.12), 0 8px 16px -8px rgba(0,0,0,0.06);
             border-color: transparent;
         }
 
         .card:hover .card-img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .card-img-wrap {
             position: relative;
-            height: 170px;
+            height: 190px;
             overflow: hidden;
             background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
         }
@@ -351,7 +314,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: block;
         }
 
@@ -359,26 +322,24 @@
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 60px;
-            background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+            height: 80px;
+            background: linear-gradient(to top, rgba(0,0,0,0.25), transparent);
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.4s;
         }
 
-        .card:hover .card-img-wrap::after {
-            opacity: 1;
-        }
+        .card:hover .card-img-wrap::after { opacity: 1; }
 
         .card-body {
-            padding: 18px 18px 16px;
+            padding: 20px 20px 18px;
         }
 
         .card-name {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 10px;
-            line-height: 1.35;
+            line-height: 1.4;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -388,48 +349,51 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .card-res {
             font-size: 0.72rem;
             color: var(--text-3);
-            font-weight: 500;
-            background: var(--surface-2);
-            padding: 3px 10px;
-            border-radius: 6px;
+            font-weight: 600;
+            background: var(--surface-hover);
+            padding: 4px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
 
         .card-size {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 700;
         }
 
+        /* ===== Download Button ===== */
         .dl-btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 12px;
-            background: linear-gradient(145deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+            padding: 14px;
+            background: linear-gradient(145deg, #6366f1, #4f46e5, #4338ca);
             color: white;
             text-decoration: none;
-            border-radius: 14px;
+            border-radius: var(--radius-xs);
             font-weight: 700;
-            font-size: 0.88rem;
-            letter-spacing: 0.01em;
-            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
             cursor: pointer;
             position: relative;
-            /* 立体感 */
+            overflow: hidden;
+            /* 3D depth */
             box-shadow:
-                0 4px 6px -1px rgba(79, 70, 229, 0.25),
-                0 2px 4px -2px rgba(79, 70, 229, 0.15),
-                inset 0 1px 0 rgba(255,255,255,0.15),
-                inset 0 -2px 0 rgba(0,0,0,0.1);
+                0 4px 6px -1px rgba(79, 70, 229, 0.3),
+                0 2px 4px -2px rgba(79, 70, 229, 0.2),
+                inset 0 1px 0 rgba(255,255,255,0.2),
+                inset 0 -3px 0 rgba(0,0,0,0.15);
             transform: translateY(0);
         }
 
@@ -438,33 +402,33 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 50%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent);
-            border-radius: 14px 14px 0 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+            border-radius: var(--radius-xs) var(--radius-xs) 0 0;
             pointer-events: none;
         }
 
         .dl-btn:hover {
-            background: linear-gradient(145deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%);
+            background: linear-gradient(145deg, #818cf8, #6366f1, #4f46e5);
             transform: translateY(-2px);
             box-shadow:
-                0 8px 16px -2px rgba(79, 70, 229, 0.35),
-                0 4px 8px -2px rgba(79, 70, 229, 0.2),
-                inset 0 1px 0 rgba(255,255,255,0.2),
-                inset 0 -2px 0 rgba(0,0,0,0.08);
+                0 10px 25px -5px rgba(79, 70, 229, 0.4),
+                0 6px 10px -6px rgba(79, 70, 229, 0.2),
+                inset 0 1px 0 rgba(255,255,255,0.25),
+                inset 0 -2px 0 rgba(0,0,0,0.1);
         }
 
         .dl-btn:active {
-            transform: translateY(1px) scale(0.98);
+            transform: translateY(1px) scale(0.97);
             box-shadow:
                 0 2px 4px -1px rgba(79, 70, 229, 0.2),
-                inset 0 2px 4px rgba(0,0,0,0.1),
+                inset 0 2px 4px rgba(0,0,0,0.15),
                 inset 0 -1px 0 rgba(255,255,255,0.05);
         }
 
-        /* Footer */
+        /* ===== Footer ===== */
         .site-footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             border-top: 1px solid var(--border);
             background: var(--surface);
         }
@@ -472,77 +436,76 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 28px;
-            margin-bottom: 14px;
+            gap: 32px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
         }
 
         .footer-links a {
             color: var(--text-2);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
         }
 
-        .footer-links a:hover {
-            color: var(--accent);
-        }
+        .footer-links a:hover { color: var(--accent); }
 
         .site-footer p {
             color: var(--text-3);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
-        /* Loading */
+        /* Loading & Empty */
         .loading {
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             grid-column: 1 / -1;
             color: var(--text-3);
         }
 
         .spin {
-            width: 32px; height: 32px;
+            width: 36px; height: 36px;
             border: 3px solid var(--border);
             border-top-color: var(--accent);
             border-radius: 50%;
             animation: spin 0.7s linear infinite;
-            margin: 0 auto 14px;
+            margin: 0 auto 16px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .empty {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             color: var(--text-3);
             grid-column: 1 / -1;
+            font-size: 1.1rem;
         }
 
         /* Mobile */
         @media (max-width: 640px) {
-            .hero-stats { gap: 28px; }
-            .hstat-num { font-size: 1.4rem; }
+            .hero { padding: 60px 20px 80px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { gap: 32px; }
+            .hstat-num { font-size: 1.8rem; }
+            .app-pill { padding: 8px; gap: 6px; }
+            .app-btn { padding: 10px 16px; font-size: 0.78rem; }
             .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .card-img-wrap { height: 130px; }
-            .app-pill { border-radius: var(--radius-sm); }
-            .app-pill-btn { padding: 8px 14px; font-size: 0.75rem; }
-            .search-wrap { margin-top: -22px; }
+            .card-img-wrap { height: 140px; }
+            .card-body { padding: 14px 14px 12px; }
+            .search-wrap { margin-top: -24px; }
         }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <div class="brand">
-                <div class="brand-icon">🎨</div>
-                <div class="brand-text">WinDynamicDesktop</div>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span>🎉</span> 374 Free Themes Available
             </div>
-            <h1 class="site-title">Free Themes Gallery</h1>
-            <p class="site-subtitle">374 dynamic wallpapers for Windows, available directly on GitHub.</p>
+            <h1>WinDynamicDesktop<br>Themes Gallery</h1>
+            <p>Beautiful dynamic wallpapers for Windows. Download directly from GitHub — fast, free, always available.</p>
 
             <div class="hero-stats">
                 <div class="hstat">
@@ -561,15 +524,15 @@
 
             <div class="app-pill">
                 <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_x64_Setup.exe"
-                   class="app-pill-btn primary" download>
-                    <span>⭐</span> x64 Setup <span class="tag">v5.7.0</span>
+                   class="app-btn primary" download>
+                    <span>⭐</span> x64 Setup <span class="version">v5.7.0</span>
                 </a>
                 <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_x64_Portable.exe"
-                   class="app-pill-btn" download>
+                   class="app-btn" download>
                     <span>📦</span> Portable
                 </a>
                 <a href="https://github.com/leon7786/20260701themes/releases/download/wdd-v5.7.0/WinDynamicDesktop_5.7.0_arm64_Setup.exe"
-                   class="app-pill-btn" download>
+                   class="app-btn" download>
                     <span>🔷</span> ARM64
                 </a>
             </div>
@@ -577,8 +540,10 @@
     </header>
 
     <div class="search-wrap">
-        <span class="icon">🔍</span>
-        <input type="text" class="search-input" id="search-input" placeholder="Search themes..." oninput="filterThemes()">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search themes by name..." oninput="filterThemes()">
+        </div>
     </div>
 
     <main class="content">
@@ -597,10 +562,10 @@
 
     <footer class="site-footer">
         <div class="footer-links">
-            <a href="https://windd.info/themes/" target="_blank">Source</a>
+            <a href="https://windd.info/themes/" target="_blank">Original Source</a>
             <a href="https://github.com/leon7786/20260701themes/releases/tag/all-themes" target="_blank">Themes Release</a>
             <a href="https://github.com/leon7786/20260701themes/releases/tag/wdd-v5.7.0" target="_blank">App Release</a>
-            <a href="https://github.com/leon7786/20260701themes" target="_blank">GitHub</a>
+            <a href="https://github.com/leon7786/20260701themes" target="_blank">GitHub Repo</a>
         </div>
         <p>Made with care for the WinDynamicDesktop community</p>
     </footer>
@@ -655,7 +620,7 @@
                             <span class="card-size">${theme.fileSize} MB</span>
                         </div>
                         <a href="${downloadUrl}" class="dl-btn" download>
-                            <span>⬇️</span> Download
+                            <span>⬇️</span> Download .ddw
                         </a>
                     </div>
                 `;
